@@ -16,8 +16,8 @@ const numbersList = document.querySelectorAll('[data-type="number"]');
 const operationsList = document.querySelectorAll('[data-type="operation"]');
 
 const ENTER = () => {
-  const numbersArray = resultDisplayed.innerText.split(/[+−/×]/);
-  const operationsArray = resultDisplayed.innerText.match(/[+−/×]/g);
+  const numbersArray = resultDisplayed.innerText.split(/[+−÷×]/);
+  const operationsArray = resultDisplayed.innerText.match(/[+−÷×]/g);
 
   let resultNumber = parseFloat(numbersArray[0]);
 
@@ -28,7 +28,7 @@ const ENTER = () => {
       resultNumber -= number;
     } else if (operation === '×') {
       resultNumber *= number;
-    } else if (operation === '/') {
+    } else if (operation === '÷') {
       resultNumber /= number;
     }
   };
