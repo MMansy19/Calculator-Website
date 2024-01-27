@@ -160,6 +160,9 @@ html {
   background-color: var(--color-key-gray-background);
   transition: all 0.3s;
 }
+.calc [data-value=Enter] {
+  font-size: 150%;
+}
 .calc .calc__key--operation {
   font-size: 150%;
 }

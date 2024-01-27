@@ -107,11 +107,6 @@ html {
     background-color: var(--color-screen-background);
     color: var(--color-top-section-text);
     transition: background-color var(--timing-animation);
-    // .calc__result--value {
-    //   flex-basis: 40%;
-    //   flex-shrink: 0;
-    //   scroll-snap-align: start;
-    // }
   }
 
   &__numsContent {
@@ -176,6 +171,9 @@ html {
       background-color: var(--color-key-gray-background);
       transition: all 0.3s;
     }
+  }
+  [data-value="Enter"] {
+    font-size: 150%;
   }
 
   .calc__key--operation {
