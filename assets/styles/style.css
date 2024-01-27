@@ -1,0 +1,234 @@
+:root {
+  --color-main-background: #3a4764;
+  --color-keypad-background: #232c43;
+  --color-screen-background: #182034;
+  --color-key-blue-background: #637097;
+  --color-key-blue-shadow: #404e72;
+  --color-key-blue-hover: #a2b3e1;
+  --color-key-red-background: #d03f2f;
+  --color-key-red-shadow: #93261a;
+  --color-key-red-hover: #f86c5c;
+  --color-key-gray-background: #eae3dc;
+  --color-key-gray-shadow: hsl(28, 16%, 65%);
+  --color-dark-blue-text: #444b5a;
+  --color-white-text: #ffffff;
+  --border-radius: 10px;
+  --timing-animation: .3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  font-size: 1.6rem;
+  font-family: "League Spartan", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-main-background);
+  color: var(--color-white-text);
+  transition: background-color var(--timing-animation);
+}
+.container:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.2;
+  background: url("./pattern.jpeg");
+  background-size: contain;
+  filter: blur(2px);
+}
+.container:has(.themes__toggle--isActive) {
+  --color-main-background: #e6e6e6;
+  --color-keypad-background: #d1cccc;
+  --color-screen-background: #ededed;
+  --color-key-blue-background: #377f86;
+  --color-key-blue-shadow: #1b5f65;
+  --color-key-blue-hover: #62b5bc;
+  --color-key-red-background: #ca5502;
+  --color-key-red-shadow: #893901;
+  --color-key-red-hover: #ff8a38;
+  --color-key-gray-background: #e5e4e1;
+  --color-key-gray-shadow: #b4a597;
+  --color-dark-blue-text: #35352c;
+  --color-white-text: #ffffff;
+  --color-top-section-text: var(--color-dark-blue-text);
+}
+
+.calc {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 1rem;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  z-index: 1;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+.calc__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-top-section-text);
+}
+.calc__result {
+  margin: 2rem 0;
+  padding: 2.5rem 2rem;
+  font-size: 3.2rem;
+  text-align: right;
+  line-height: 1;
+  border-radius: calc(var(--border-radius) / 2);
+  background-color: var(--color-screen-background);
+  color: var(--color-top-section-text);
+  transition: background-color var(--timing-animation);
+}
+.calc__numsContent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 2rem;
+  gap: 2rem;
+  background-color: var(--color-keypad-background);
+  font-size: 1.8rem;
+  color: var(--color-dark-blue-text);
+  border-radius: calc(var(--border-radius) / 2);
+  transition: background-color var(--timing-animation);
+}
+.calc__key {
+  position: relative;
+  flex-basis: 25%;
+  border-radius: calc(var(--border-radius) / 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  isolation: isolate;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+.calc__key:hover:after, .calc__key.hover:after {
+  background-color: var(--color-white-text);
+}
+.calc__key:active {
+  transform: scale(0.95);
+}
+.calc__key:active:before {
+  bottom: -0.2rem;
+}
+.calc__key span {
+  z-index: 1;
+  user-select: none;
+}
+.calc__key:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: -0.3rem;
+  border-radius: calc(var(--border-radius) / 2);
+  background-color: var(--color-key-gray-shadow);
+}
+.calc__key:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: calc(var(--border-radius) / 2);
+  background-color: var(--color-key-gray-background);
+  transition: all 0.3s;
+}
+.calc__key--wide {
+  grid-column: span 2;
+}
+.calc [data-type=number] {
+  font-size: 2.4rem;
+}
+.calc [data-value=Backspace]:hover:after, .calc [data-value=Backspace].hover:after, .calc [data-value=c]:hover:after, .calc [data-value=c].hover:after {
+  background-color: var(--color-key-blue-hover);
+}
+.calc [data-value=Backspace]:after, .calc [data-value=c]:after {
+  background-color: var(--color-key-blue-background);
+}
+.calc [data-value=Backspace]:before, .calc [data-value=c]:before {
+  background-color: var(--color-key-blue-shadow);
+}
+.calc [data-value=Backspace] span, .calc [data-value=c] span {
+  color: var(--color-white-text);
+}
+.calc [data-value=Enter]:hover:after, .calc [data-value=Enter].hover:after {
+  background-color: var(--color-key-red-hover);
+}
+.calc [data-value=Enter]:after {
+  background-color: var(--color-key-red-background);
+}
+.calc [data-value=Enter]:before {
+  background-color: var(--color-key-red-shadow);
+}
+.calc [data-value=Enter] span {
+  color: var(--color-white-text);
+}
+
+.themes {
+  --toggle-width: 3.5rem;
+  --circle-width: 1rem;
+  --toggle-padding: .3rem;
+  display: flex;
+  gap: 2rem;
+  font-size: 1rem;
+  align-items: flex-end;
+}
+.themes__label {
+  line-height: 1.2;
+}
+.themes__toggleContent {
+  display: flex;
+  flex-direction: column;
+  width: var(--toggle-width);
+}
+.themes__numbers {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0.3rem;
+}
+.themes__number {
+  cursor: pointer;
+}
+.themes__toggle {
+  content: "";
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--toogle-padding);
+  width: 100%;
+  height: 1.5rem;
+  border-radius: var(--border-radius);
+  background: var(--color-keypad-background);
+  cursor: pointer;
+}
+.themes__toggle:hover:before {
+  background-color: var(--color-key-red-hover);
+}
+.themes__toggle:before {
+  content: "";
+  position: absolute;
+  left: var(--toggle-padding);
+  width: var(--circle-width);
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--color-key-red-background);
+  transition: all 0.3s;
+}
+.themes__toggle--isActive:before {
+  left: calc(var(--toggle-width) - var(--circle-width) - var(--toggle-padding));
+}
+
+/*# sourceMappingURL=style.css.map */

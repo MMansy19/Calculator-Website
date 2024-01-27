@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="calc">
+        <div class="calc__header">
+          <span>Calculator</span>
+
+          <div class="themes">
+            <div class="themes__label">
+              <span>THEME</span>
+            </div>
+            <div class="themes__toggleContent">
+              <div class="themes__numbers">
+                <span class="themes__number">1</span>
+                <span class="themes__number">2</span>
+              </div>
+              <span class="themes__toggle" role="button" tabindex="0"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc__result">0</div>
+
+        <div class="calc__numsContent">
+          <button class="calc__key" data-type="number" data-value="7">
+            <span>7</span>
+          </button>
+          <button class="calc__key" data-type="number" data-value="8">
+            <span>8</span>
+          </button>
+          <button class="calc__key" data-type="number" data-value="9">
+            <span>9</span>
+          </button>
+          <button class="calc__key" data-type="operation" data-value="Backspace">
+            <span>DEL</span>
+          </button>
+          <button class="calc__key" data-type="number" data-value="4">
+            <span>4</span>
+          </button>
+          <button class="calc__key" data-type="number" data-value="5">
+            <span>5</span>
+          </button>
+          <button class="calc__key" data-type="number" data-value="6">
+            <span>6</span>
+          </button>
+          <button class="calc__key" data-type="operation" data-value="+">
+            <span>+</span>
+          </button>
+          <button class="calc__key" data-type="number" data-value="1">
+            <span>1</span>
+          </button>
+          <button class="calc__key" data-type="number" data-value="2">
+            <span>2</span>
+          </button>
+          <button class="calc__key" data-type="number" data-value="3">
+            <span>3</span>
+          </button>
+          <button class="calc__key" data-type="operation" data-value="-">
+            <span>-</span>
+          </button>
+          <button class="calc__key" data-type="number" data-value=".">
+            <span>.</span>
+          </button>
+          <button class="calc__key" data-type="number" data-value="0">
+            <span>0</span>
+          </button>
+          <button class="calc__key" data-type="operation" data-value="/">
+            <span>/</span>
+          </button>
+          <button class="calc__key" data-type="operation" data-value="*">
+            <span>x</span>
+          </button>
+          <button class="calc__key calc__key--wide" data-type="operation" data-value="c">
+            <span>RESET</span>
+          </button>
+          <button class="calc__key calc__key--wide" data-type="operation" data-value="Enter">
+            <span>=</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
