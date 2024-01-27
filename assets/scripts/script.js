@@ -10,7 +10,11 @@ const toggleDarkThemeWithEnter = (event) => {
 toggleElement.addEventListener('keydown', toggleDarkThemeWithEnter);
 toggleElement.addEventListener('click', toggleDarkTheme);
 
-/* detect numbers */
+// <=========================================================>
+// <=========================================================>
+/* <==========================detect numbers==========================> */
+// <=========================================================>
+// <=========================================================>
 const resultDisplayed = document.querySelector('.calc__result');
 const numbersList = document.querySelectorAll('[data-type="number"]');
 const operationsList = document.querySelectorAll('[data-type="operation"]');
@@ -45,9 +49,10 @@ const AC = () => {
   resultDisplayed.innerText = '0';
 };
 const DEL = () => {
-  if (resultDisplayed.innerText.length === 1) { resultDisplayed.innerText = '0'; return; }
+  const len = resultDisplayed.innerText.length;
+  if (len === 1) { resultDisplayed.innerText = '0'; return; }
   const charArray = resultDisplayed.innerText.split('');
-  charArray[1] = '';
+  charArray[len - 1] = '';
   resultDisplayed.innerText = charArray.join('');
 };
 
@@ -55,6 +60,9 @@ const displayNumber = (number) => {
   resultDisplayed.insertAdjacentText('beforeend', number);
 };
 
+const makeOperation = (operation) => {
+  if (operation === 'AC') { AC(); } else if (operation === 'DEL') { DEL(); } else if (operation === '=') { ENTER(); } else if (resultDisplayed.innerText !== '0') { displayNumber(operation); }
+};
 numbersList.forEach((number) => {
   number.addEventListener('click', () => {
     if (resultDisplayed.innerText === '0') { resultDisplayed.innerText = ''; }
@@ -64,6 +72,55 @@ numbersList.forEach((number) => {
 });
 operationsList.forEach((operation) => {
   operation.addEventListener('click', () => {
-    if (operation.innerText === 'AC') { AC(); } else if (operation.innerText === 'DEL') { DEL(); } else if (operation.innerText === '=') { ENTER(); } else if (resultDisplayed.innerText !== '0') displayNumber(operation.innerText);
+    makeOperation(operation.innerText);
   });
+});
+
+// <====================================================================================>
+// <==================================================================================>
+/* <==========================Use keyboard as input source==========================> */
+// <====================================================================================>
+// <==================================================================================>
+
+const availableNumbers = [
+  '0',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  'Ans',
+];
+const availableOperations = ['+', '-', '/', '*'];
+const availableKeys = [
+  ...availableNumbers,
+  ...availableOperations,
+  'Backspace',
+  'Enter',
+  'c',
+];
+const keyboardWithHover = (key) => {
+  if (availableKeys.includes(key)) {
+    const elem = document.querySelector(`[data-value="${key}"]`);
+
+    elem.classList.add('hover');
+    elem.click();
+    setTimeout(() => elem.classList.remove('hover'), 100);
+  }
+};
+
+const keyboardWithoutHover = (key) => {
+  if (availableNumbers.includes(key)) {
+    displayNumber(key);
+  } else if (availableOperations.includes(key)) {
+    makeOperation(key);
+  }
+};
+window.addEventListener('keydown', (event) => {
+  // keyboardWithoutHover(event.key);
+  keyboardWithHover(event.key);
 });
