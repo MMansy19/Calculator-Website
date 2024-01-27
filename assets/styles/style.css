@@ -81,7 +81,7 @@ html {
   grid-column: span 2;
 }
 .calc .calc__key--long {
-  grid-row-start: 6;
+  grid-row-start: 5;
   grid-row-end: 8;
   grid-column: 3;
   height: 100%;
@@ -93,6 +93,8 @@ html {
   color: var(--color-top-section-text);
 }
 .calc__result {
+  display: flex;
+  overflow-x: auto;
   margin: 2rem 0;
   padding: 2.5rem 2rem;
   font-size: 3.2rem;
@@ -158,21 +160,19 @@ html {
   background-color: var(--color-key-gray-background);
   transition: all 0.3s;
 }
-.calc [data-value=Backspace]:hover:after, .calc [data-value=Backspace].hover:after,
-.calc [data-value=c]:hover:after,
-.calc [data-value=c].hover:after {
+.calc .calc__key--operation {
+  font-size: 150%;
+}
+.calc .calc__key--operation:hover:after, .calc .calc__key--operation.hover:after {
   background-color: var(--color-key-blue-hover);
 }
-.calc [data-value=Backspace]:after,
-.calc [data-value=c]:after {
+.calc .calc__key--operation:after {
   background-color: var(--color-key-blue-background);
 }
-.calc [data-value=Backspace]:before,
-.calc [data-value=c]:before {
+.calc .calc__key--operation:before {
   background-color: var(--color-key-blue-shadow);
 }
-.calc [data-value=Backspace] span,
-.calc [data-value=c] span {
+.calc .calc__key--operation span {
   color: var(--color-white-text);
 }
 .calc [data-value=Enter]:hover:after, .calc [data-value=Enter].hover:after {
@@ -187,16 +187,21 @@ html {
 .calc [data-value=Enter] span {
   color: var(--color-white-text);
 }
-.calc [data-value=c]:hover:after, .calc [data-value=c].hover:after {
+.calc [data-value=c]:hover:after, .calc [data-value=c].hover:after,
+.calc [data-value=Backspace]:hover:after,
+.calc [data-value=Backspace].hover:after {
   background-color: var(--color-key-red-hover);
 }
-.calc [data-value=c]:after {
+.calc [data-value=c]:after,
+.calc [data-value=Backspace]:after {
   background-color: var(--color-key-red-background);
 }
-.calc [data-value=c]:before {
+.calc [data-value=c]:before,
+.calc [data-value=Backspace]:before {
   background-color: var(--color-key-red-shadow);
 }
-.calc [data-value=c] span {
+.calc [data-value=c] span,
+.calc [data-value=Backspace] span {
   color: var(--color-white-text);
 }
 

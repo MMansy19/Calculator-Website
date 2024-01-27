@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <div class="calc__result">0</div>
+        <div class="calc__result"><div class="calc__result--value">0</div></div>
 
         <div class="calc__numsContent">
           <button class="calc__key" data-type="number" data-value="7">
@@ -68,30 +68,56 @@
           <button class="calc__key" data-type="number" data-value="3">
             <span>3</span>
           </button>
-          <button class="calc__key" data-type="number" data-value=".">
-            <span>.</span>
-          </button>
+
           <button class="calc__key" data-type="number" data-value="0">
             <span>0</span>
           </button>
 
-          <button class="calc__key" data-type="operation" data-value="+">
-            <span>+</span>
-          </button>
-          <button class="calc__key" data-type="operation" data-value="-">
-            <span>-</span>
-          </button>
-
-          <button class="calc__key" data-type="operation" data-value="/">
-            <span>/</span>
-          </button>
-          <button class="calc__key" data-type="operation" data-value="*">
-            <span>x</span>
-          </button>
-          <button class="calc__key" data-type="number" data-value="ANS">
+          <button
+            class="calc__key calc__key--wide"
+            data-type="number"
+            data-value="ANS"
+            data-saved="0"
+          >
             <span>ANS</span>
           </button>
 
+          <button
+            class="calc__key calc__key--operation"
+            data-type="operation"
+            data-value="+"
+          >
+            <span>+</span>
+          </button>
+          <button
+            class="calc__key calc__key--operation"
+            data-type="operation"
+            data-value="−"
+          >
+            <span>−</span>
+          </button>
+
+          <button
+            class="calc__key calc__key--operation"
+            data-type="operation"
+            data-value="×"
+          >
+            <span>× </span>
+          </button>
+          <button
+            class="calc__key calc__key--operation"
+            data-type="operation"
+            data-value="÷"
+          >
+            <span>÷</span>
+          </button>
+          <button
+            class="calc__key calc__key--long"
+            data-type="operation"
+            data-value="Enter"
+          >
+            <span>Enter</span>
+          </button>
           <button
             class="calc__key"
             data-type="operation"
@@ -99,18 +125,7 @@
           >
             <span>DEL</span>
           </button>
-          <button
-            class="calc__key calc__key--long"
-            data-type="operation"
-            data-value="Enter"
-          >
-            <span>=</span>
-          </button>
-          <button
-            class="calc__key calc__key--wide"
-            data-type="operation"
-            data-value="c"
-          >
+          <button class="calc__key" data-type="operation" data-value="c">
             <span>AC</span>
           </button>
         </div>

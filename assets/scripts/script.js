@@ -15,13 +15,40 @@ const resultDisplayed = document.querySelector('.calc__result');
 const numbersList = document.querySelectorAll('[data-type="number"]');
 const operationsList = document.querySelectorAll('[data-type="operation"]');
 
+const ENTER = () => {
+  const numbersArray = resultDisplayed.innerText.split(/[+−/×]/);
+  const operationsArray = resultDisplayed.innerText.match(/[+−/×]/g);
+
+  let resultNumber = parseFloat(numbersArray[0]);
+
+  const applyOperation = (number, operation) => {
+    if (operation === '+') {
+      resultNumber += number;
+    } else if (operation === '−') {
+      resultNumber -= number;
+    } else if (operation === '×') {
+      resultNumber *= number;
+    } else if (operation === '/') {
+      resultNumber /= number;
+    }
+  };
+  for (let i = 0; i < operationsArray.length; i += 1) {
+    applyOperation(parseFloat(numbersArray[i + 1]), operationsArray[i]);
+  }
+  if (resultNumber.toString() === 'NaN') {
+    resultDisplayed.innerText = '0';
+  } else resultDisplayed.innerText = resultNumber.toString();
+  const ANS = document.querySelector('[data-value="ANS"]');
+  ANS.setAttribute('data-saved', resultDisplayed.innerText);
+};
 const AC = () => {
-  const ansElement = numbersList.querySelector('[data-value="ANS"]');
-  ansElement.innerText = resultDisplayed.innerText;
   resultDisplayed.innerText = '0';
 };
 const DEL = () => {
-  resultDisplayed.innerText -= ' ';
+  if (resultDisplayed.innerText.length === 1) { resultDisplayed.innerText = '0'; return; }
+  const charArray = resultDisplayed.innerText.split('');
+  charArray[1] = '';
+  resultDisplayed.innerText = charArray.join('');
 };
 
 const displayNumber = (number) => {
@@ -31,14 +58,12 @@ const displayNumber = (number) => {
 numbersList.forEach((number) => {
   number.addEventListener('click', () => {
     if (resultDisplayed.innerText === '0') { resultDisplayed.innerText = ''; }
+    if (number.innerText === 'ANS') { displayNumber(number.getAttribute('data-saved')); return; }
     displayNumber(number.innerText);
   });
 });
 operationsList.forEach((operation) => {
   operation.addEventListener('click', () => {
-    // displayNumber(operation.innerText);
-    if (operation.innerText === 'AC') {
-      AC();
-    }
+    if (operation.innerText === 'AC') { AC(); } else if (operation.innerText === 'DEL') { DEL(); } else if (operation.innerText === 'Enter') { ENTER(); } else if (resultDisplayed.innerText !== '0') displayNumber(operation.innerText);
   });
 });
