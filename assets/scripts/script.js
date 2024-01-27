@@ -38,8 +38,8 @@ const ENTER = () => {
   if (resultNumber.toString() === 'NaN') {
     resultDisplayed.innerText = '0';
   } else resultDisplayed.innerText = resultNumber.toString();
-  const ANS = document.querySelector('[data-value="ANS"]');
-  ANS.setAttribute('data-saved', resultDisplayed.innerText);
+  const ans = document.querySelector('[data-value="Ans"]');
+  ans.setAttribute('data-saved', resultDisplayed.innerText);
 };
 const AC = () => {
   resultDisplayed.innerText = '0';
@@ -58,12 +58,12 @@ const displayNumber = (number) => {
 numbersList.forEach((number) => {
   number.addEventListener('click', () => {
     if (resultDisplayed.innerText === '0') { resultDisplayed.innerText = ''; }
-    if (number.innerText === 'ANS') { displayNumber(number.getAttribute('data-saved')); return; }
+    if (number.innerText === 'Ans') { displayNumber(number.getAttribute('data-saved')); return; }
     displayNumber(number.innerText);
   });
 });
 operationsList.forEach((operation) => {
   operation.addEventListener('click', () => {
-    if (operation.innerText === 'AC') { AC(); } else if (operation.innerText === 'DEL') { DEL(); } else if (operation.innerText === 'Enter') { ENTER(); } else if (resultDisplayed.innerText !== '0') displayNumber(operation.innerText);
+    if (operation.innerText === 'AC') { AC(); } else if (operation.innerText === 'DEL') { DEL(); } else if (operation.innerText === '=') { ENTER(); } else if (resultDisplayed.innerText !== '0') displayNumber(operation.innerText);
   });
 });
