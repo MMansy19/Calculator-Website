@@ -13,12 +13,16 @@ Welcome to my Calculator-Website project! This interactive web calculator not on
 ## Dark Mode 
 ![](assets/images/2.png)
 
-## Features
 
-- Toggle between light and dark themes.
-- Basic arithmetic operations: addition (+), subtraction (-), multiplication (×), division (÷).
-- ANS button to recall the last calculated result.
-- Clear (AC) and delete (DEL) functionalities.
+## Key Features
+
+- **Responsive Design:** Enjoy consistent performance across a variety of devices.
+- **Keyboard Navigation:** Enhance your efficiency with seamless navigation using the keyboard.
+- **Light/Dark Theme Support:** Toggle between light and dark themes to suit your preferences.
+- **Error Handling:** Robust error-checking mechanisms ensure accurate and reliable calculations.
+- **Intuitive UI (User Interface):** A thoughtfully crafted design ensures an easy and intuitive navigation experience.
+- **Efficient Arithmetic Operations:** Perform basic calculations with precision and speed.
+
 
 ## Technologies Used
 
@@ -28,31 +32,21 @@ Welcome to my Calculator-Website project! This interactive web calculator not on
 - JavaScript
 - ESLint
 
-## Getting Started
 
-1. Clone the repository:
+## How to Use
 
-```bash
-git clone https://github.com/MMansy19/Calculator-Website.git
-```
+Navigate through the calculator effortlessly:
 
-2. Open the project in your preferred code editor.
+- **Number Input:** Use the keyboard or on-screen buttons to input numerical values.
+- **Arithmetic Operations:** Trigger addition, subtraction, multiplication, and division with ease.
+- **ANS Key:** Instantly recall and reuse the last calculated result.
+- **Enter Key:** Execute calculations swiftly using the Enter key.
+- **Delete (DEL) Key:** Make quick corrections by removing the last digit.
+- **Clear (AC) Key:** Reset the calculator to zero for a fresh start.
 
-3. Open the `index.html` file in a web browser.
+## Author
 
-4. Start using the calculator!
+- Website - [Mahmoud Mansy](https://mahmoud-mansy-portfolio.netlify.app/)
+- Github - [MMansy19](https://github.com/MMansy19)
+- Linkedin - [mahmoud-mansy](https://www.linkedin.com/in/mahmoud-mansy-a189a5232/)
 
-## Usage
-
-- Click on the number buttons to input numbers.
-- Click on the operation buttons to perform calculations.
-- Use DEL to delete the last digit.
-- Use AC to clear the calculator.
-
-
-## Technologies Used
-
-- HTML
-- CSS
-- SASS
-- JavaScript
