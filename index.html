@@ -9,8 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets\styles\style.css" type="text/css" />
     <title>Calculator</title>
   </head>
   <body>
@@ -45,9 +48,7 @@
           <button class="calc__key" data-type="number" data-value="9">
             <span>9</span>
           </button>
-          <button class="calc__key" data-type="operation" data-value="Backspace">
-            <span>DEL</span>
-          </button>
+
           <button class="calc__key" data-type="number" data-value="4">
             <span>4</span>
           </button>
@@ -57,9 +58,7 @@
           <button class="calc__key" data-type="number" data-value="6">
             <span>6</span>
           </button>
-          <button class="calc__key" data-type="operation" data-value="+">
-            <span>+</span>
-          </button>
+
           <button class="calc__key" data-type="number" data-value="1">
             <span>1</span>
           </button>
@@ -69,31 +68,55 @@
           <button class="calc__key" data-type="number" data-value="3">
             <span>3</span>
           </button>
-          <button class="calc__key" data-type="operation" data-value="-">
-            <span>-</span>
-          </button>
           <button class="calc__key" data-type="number" data-value=".">
             <span>.</span>
           </button>
           <button class="calc__key" data-type="number" data-value="0">
             <span>0</span>
           </button>
+
+          <button class="calc__key" data-type="operation" data-value="+">
+            <span>+</span>
+          </button>
+          <button class="calc__key" data-type="operation" data-value="-">
+            <span>-</span>
+          </button>
+
           <button class="calc__key" data-type="operation" data-value="/">
             <span>/</span>
           </button>
           <button class="calc__key" data-type="operation" data-value="*">
             <span>x</span>
           </button>
-          <button class="calc__key calc__key--wide" data-type="operation" data-value="c">
-            <span>RESET</span>
+          <button class="calc__key" data-type="number" data-value="ANS">
+            <span>ANS</span>
           </button>
-          <button class="calc__key calc__key--wide" data-type="operation" data-value="Enter">
+
+          <button
+            class="calc__key"
+            data-type="operation"
+            data-value="Backspace"
+          >
+            <span>DEL</span>
+          </button>
+          <button
+            class="calc__key calc__key--long"
+            data-type="operation"
+            data-value="Enter"
+          >
             <span>=</span>
+          </button>
+          <button
+            class="calc__key calc__key--wide"
+            data-type="operation"
+            data-value="c"
+          >
+            <span>AC</span>
           </button>
         </div>
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="assets\scripts\script.js"></script>
   </body>
 </html>

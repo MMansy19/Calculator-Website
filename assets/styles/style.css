@@ -5,15 +5,18 @@
   --color-key-blue-background: #637097;
   --color-key-blue-shadow: #404e72;
   --color-key-blue-hover: #a2b3e1;
-  --color-key-red-background: #d03f2f;
-  --color-key-red-shadow: #93261a;
+  --color-key-green-hover: #4ee460;
+  --color-key-green-background: #269032;
+  --color-key-green-shadow: #108820;
+  --color-key-red-background: #a23023;
+  --color-key-red-shadow: #7d190d;
   --color-key-red-hover: #f86c5c;
   --color-key-gray-background: #eae3dc;
   --color-key-gray-shadow: hsl(28, 16%, 65%);
   --color-dark-blue-text: #444b5a;
   --color-white-text: #ffffff;
   --border-radius: 10px;
-  --timing-animation: .3s;
+  --timing-animation: 0.3s;
 }
 
 * {
@@ -43,7 +46,7 @@ html {
   height: 100%;
   z-index: 0;
   opacity: 0.2;
-  background: url("./pattern.jpeg");
+  background: url("../images/pattern.jpeg");
   background-size: contain;
   filter: blur(2px);
 }
@@ -74,6 +77,15 @@ html {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
 }
+.calc .calc__key--wide {
+  grid-column: span 2;
+}
+.calc .calc__key--long {
+  grid-row-start: 6;
+  grid-row-end: 8;
+  grid-column: 3;
+  height: 100%;
+}
 .calc__header {
   display: flex;
   justify-content: space-between;
@@ -93,7 +105,7 @@ html {
 }
 .calc__numsContent {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   padding: 2rem;
   gap: 2rem;
   background-color: var(--color-keypad-background);
@@ -146,41 +158,52 @@ html {
   background-color: var(--color-key-gray-background);
   transition: all 0.3s;
 }
-.calc__key--wide {
-  grid-column: span 2;
-}
-.calc [data-type=number] {
-  font-size: 2.4rem;
-}
-.calc [data-value=Backspace]:hover:after, .calc [data-value=Backspace].hover:after, .calc [data-value=c]:hover:after, .calc [data-value=c].hover:after {
+.calc [data-value=Backspace]:hover:after, .calc [data-value=Backspace].hover:after,
+.calc [data-value=c]:hover:after,
+.calc [data-value=c].hover:after {
   background-color: var(--color-key-blue-hover);
 }
-.calc [data-value=Backspace]:after, .calc [data-value=c]:after {
+.calc [data-value=Backspace]:after,
+.calc [data-value=c]:after {
   background-color: var(--color-key-blue-background);
 }
-.calc [data-value=Backspace]:before, .calc [data-value=c]:before {
+.calc [data-value=Backspace]:before,
+.calc [data-value=c]:before {
   background-color: var(--color-key-blue-shadow);
 }
-.calc [data-value=Backspace] span, .calc [data-value=c] span {
+.calc [data-value=Backspace] span,
+.calc [data-value=c] span {
   color: var(--color-white-text);
 }
 .calc [data-value=Enter]:hover:after, .calc [data-value=Enter].hover:after {
-  background-color: var(--color-key-red-hover);
+  background-color: var(--color-key-green-hover);
 }
 .calc [data-value=Enter]:after {
-  background-color: var(--color-key-red-background);
+  background-color: var(--color-key-green-background);
 }
 .calc [data-value=Enter]:before {
-  background-color: var(--color-key-red-shadow);
+  background-color: var(--color-key-green-shadow);
 }
 .calc [data-value=Enter] span {
+  color: var(--color-white-text);
+}
+.calc [data-value=c]:hover:after, .calc [data-value=c].hover:after {
+  background-color: var(--color-key-red-hover);
+}
+.calc [data-value=c]:after {
+  background-color: var(--color-key-red-background);
+}
+.calc [data-value=c]:before {
+  background-color: var(--color-key-red-shadow);
+}
+.calc [data-value=c] span {
   color: var(--color-white-text);
 }
 
 .themes {
   --toggle-width: 3.5rem;
   --circle-width: 1rem;
-  --toggle-padding: .3rem;
+  --toggle-padding: 0.3rem;
   display: flex;
   gap: 2rem;
   font-size: 1rem;
@@ -229,6 +252,4 @@ html {
 }
 .themes__toggle--isActive:before {
   left: calc(var(--toggle-width) - var(--circle-width) - var(--toggle-padding));
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
