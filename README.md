@@ -24,6 +24,7 @@ This is a simple calculator web application with light/dark theme support.
 
 - HTML
 - CSS
+- SASS
 - JavaScript
 - ESLint
 
