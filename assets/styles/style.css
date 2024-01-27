@@ -32,6 +32,7 @@ html {
   font-size: 1.6rem;
   font-family: "League Spartan", sans-serif;
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
@@ -260,4 +261,22 @@ html {
 }
 .themes__toggle--isActive:before {
   left: calc(var(--toggle-width) - var(--circle-width) - var(--toggle-padding));
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+a {
+  color: var(--color-dark-white);
+  color: var(--color-key-gray-shadow);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  font-size: 105%;
+  transition: 0.5s;
 }/*# sourceMappingURL=style.css.map */
