@@ -1,6 +1,6 @@
 # Calculator
 
-This is a simple calculator web application with light/dark theme support.
+Welcome to my Calculator-Website project! This interactive web calculator not only provides a sleek and user-friendly interface for performing basic arithmetic operations but also supports keyboard navigation for an enhanced user experience.
 
 ## [Live Demo](https://main--mansy-calculator.netlify.app/)
 
