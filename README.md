@@ -1,8 +1,14 @@
-# Calculator
+# Calculator app
 
 Welcome to my Calculator-Website project! This interactive web calculator not only provides a sleek and user-friendly interface for performing basic arithmetic operations but also supports keyboard navigation for an enhanced user experience.
 
+## Challenge from Frontend Mentor
+[![Frontend Mentor](https://img.shields.io/badge/Frontend%20Mentor-Completed-brightgreen.svg)](https://www.frontendmentor.io/)
+
 ## [Live Demo](https://main--mansy-calculator.netlify.app/)
+
+This project is a solution to the [Frontend Mentor challenge](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29) for the [Calculator app](https://main--mansy-calculator.netlify.app/).
+
 
 ## Planning
 ![](assets/images/Planning.jpg)
