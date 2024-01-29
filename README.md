@@ -10,14 +10,18 @@ Welcome to my Calculator-Website project! This interactive web calculator not on
 This project is a solution to the [Frontend Mentor challenge](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29) for the [Calculator app](https://main--mansy-calculator.netlify.app/).
 
 
-## Planning
-![](assets/images/Planning.jpg)
+## Screanshots
 
-## light Mode 
-![](assets/images/1.png)
+### Overview
+![Calculator-Website Overview](assets/images/9176032_6573.jpg)
+### Planning
+![Planning](assets/images/Planning.jpg)
 
-## Dark Mode 
-![](assets/images/2.png)
+### light Mode 
+![light Mode](assets/images/1.png)
+
+### Dark Mode 
+![Dark Mode ](assets/images/2.png)
 
 
 ## Key Features
